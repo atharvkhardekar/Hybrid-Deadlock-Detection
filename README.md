@@ -71,9 +71,9 @@ Ensure you have the following installed:
    ```bash
    python connection.py
 
-   - Connects to Cassandra using the address 127.0.0.1 (default for local installations).
-   - Creates the test keyspace if it does not exist.
-   - Outputs a confirmation of connection and keyspace setup.
+- Connects to Cassandra using the address 127.0.0.1 (default for local installations).
+- Creates the test keyspace if it does not exist.
+- Outputs a confirmation of connection and keyspace setup.
 
 2. **Run Cycle Detection (cycleDetect.py)**
 
@@ -85,18 +85,18 @@ Ensure you have the following installed:
     ```bash
     python ml.py
 
-    - Loads transactional data from transactions.csv.
-    - Predicts deadlocks using a machine learning model.
-    - Displays and logs the accuracy and performance metrics.
+- Loads transactional data from transactions.csv.
+- Predicts deadlocks using a machine learning model.
+- Displays and logs the accuracy and performance metrics.
 
 4. **Run Hybrid Deadlock Detection (hybrid.py)**
    
    ```bash
     python hybrid.py
 
-    - Combines ML predictions with traditional detection mechanisms.
-    - Outputs more accurate predictions of deadlocks.
-    - Displays and logs the accuracy and performance metrics.
+- Combines ML predictions with traditional detection mechanisms.
+- Outputs more accurate predictions of deadlocks.
+- Displays and logs the accuracy and performance metrics.
 
 5. **Compare Results** 
    All scripts generate accuracy scores and logs for evaluation.
