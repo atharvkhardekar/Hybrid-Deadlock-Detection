@@ -99,9 +99,9 @@ Ensure you have the following installed:
 - Displays and logs the accuracy and performance metrics.
 
 5. **Compare Results** 
-   All scripts generate accuracy scores and logs for evaluation.
-   - Accuracy of ml.py which uses (Random Forest) is 60% (based on transactions.csv)
-   - Accuracy of hybrid.py which uses (Gradient Boosting + Timestamping) is 80% (based on transactions.csv)  
+   - All scripts generate accuracy scores and logs for evaluation.
+        1. Accuracy of ml.py which uses (Random Forest) is 60% (based on transactions.csv)
+        2. Accuracy of hybrid.py which uses (Gradient Boosting + Timestamping) is 80% (based on transactions.csv)  
 
 - Note : You can also use your own Ml models or algorithms with diferent traditional methods.     
 
