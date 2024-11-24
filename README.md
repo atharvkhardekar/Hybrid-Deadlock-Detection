@@ -70,7 +70,7 @@ Ensure you have the following installed:
     - To set up the Cassandra database, you can use Docker for a streamlined installation. Follow the steps below:
     
      ### Using Docker to Install Cassandra
-       1. Ensure you have Docker installed on your system. If not, download and install it from [Docker's official site](https://www.docker.com/).
+       <!-- 1. Ensure you have Docker installed on your system. If not, download and install it from [Docker's official site](https://www.docker.com/). -->
        
        2. Pull the official Cassandra Docker image:
 
