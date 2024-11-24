@@ -70,45 +70,47 @@ Ensure you have the following installed:
     To set up the Cassandra database, you can use Docker for a streamlined installation. Follow the steps below:
     
     ### Using Docker to Install Cassandra
-     1. Ensure you have Docker installed on your system. If not, download and install it from [Docker's official site](https://www.docker.com/).
-     2. Pull the official Cassandra Docker image:
+       1. Ensure you have Docker installed on your system. If not, download and install it from [Docker's official site](https://www.docker.com/).
+       
+       2. Pull the official Cassandra Docker image:
 
-      ```bash
-      docker pull cassandra:latest
+          ```bash
+          docker pull cassandra:latest
      
-     3. Start a Cassandra container:
+       3. Start a Cassandra container:
       
-       ```bash
-       docker run --name cassandra-container -d -p 9042:9042 cassandra
+          ```bash
+          docker run --name cassandra-container -d -p 9042:9042 cassandra
 
-       - This command:
+          - This command:
 
-          1.  Names the container cassandra-container.
-          2. Exposes the default Cassandra port 9042 for client connections.
-          3. Runs Cassandra in detached mode (-d).
+             1.  Names the container cassandra-container.
+             2. Exposes the default Cassandra port 9042 for client connections.
+             3. Runs Cassandra in detached mode (-d).
 
-     4. Verify that the Cassandra container is running:
-       ```bash
-       docker ps
+       4. Verify that the Cassandra container is running:
+          ```bash
+          docker ps
 
-       - Or you can directly check it from your Docker Desktop.
+          - Or you can directly check it from your Docker Desktop.
 
-     5. Connecting to Cassandra with (connection.py)
+       5. Connecting to Cassandra with (connection.py)
 
-       1. Ensure your Cassandra Docker container is running.
-       2. The connection.py script is preconfigured to connect to Cassandra on 127.0.0.1. This is the default host when using Docker with port mapping (-p 9042:9042).
-       3. Run the script to set up the connection:
+          1. Ensure your Cassandra Docker container is running.
+          2. The connection.py script is preconfigured to connect to Cassandra on 127.0.0.1. This is the default host when using Docker with port mapping (-p 9042:9042).
+          
+          3. Run the script to set up the connection:
 
-        ```bash
-        python connection.py
+          ```bash
+          python connection.py
 
-       - This script will:
+          - This script will:
 
-          1. Connect to Cassandra on 127.0.0.1.
-          2. Create a test keyspace if it doesn't already exist.
-          3. Set the test keyspace as active. 
+             1. Connect to Cassandra on 127.0.0.1.
+             2. Create a test keyspace if it doesn't already exist.
+             3. Set the test keyspace as active. 
      
-     6. Upon successful execution, the script will confirm the connection and keyspace setup.      
+       6. Upon successful execution, the script will confirm the connection and keyspace setup.      
   
 
 ## Usage
@@ -152,51 +154,51 @@ Ensure you have the following installed:
 - Note : You can also use your own Ml models or algorithms with diferent traditional methods.  
 
 6. **(Additionally) To check the Cassandra Container and logs in the Database**
- 1. Enter the Cassandra Container: Use the following command to access the Cassandra container's shell:
+    1. Enter the Cassandra Container: Use the following command to access the Cassandra container's shell:
 
-   ```bash
-   docker exec -it cassandra-container cqlsh
+       ```bash
+       docker exec -it cassandra-container cqlsh
 
-   - cassandra-container is the name of the container. Replace it with your container's name if it's different.
-   - cqlsh is the Cassandra Query Language Shell.
+       - cassandra-container is the name of the container. Replace it with your container's name if it's different.
+       - cqlsh is the Cassandra Query Language Shell.
 
- 2. Switch to the Keyspace: Once inside cqlsh, set the keyspace you created using connection.py. For example, if your keyspace is test:
+    2. Switch to the Keyspace: Once inside cqlsh, set the keyspace you created using connection.py. For example, if your keyspace is test:
 
-   ```sql
-   USE test;
+       ```sql
+       USE test;
 
- 3. List All Tables: Run the following command to display all tables in the keyspace:
+    3. List All Tables: Run the following command to display all tables in the keyspace:
 
-   ```sql
-   DESCRIBE TABLES;
+       ```sql
+       DESCRIBE TABLES;
 
- 4. To check the entries in the table.
+    4. To check the entries in the table.
 
-   ```sql
-   SELECT * FROM table_name;
+       ```sql
+       SELECT * FROM table_name;
 
- 5. According to these Detection files there are two tables in Cassandra Container:
-   1. cycleDetect (used by the cycleDetect.py)
-   2. deadlock_info (used by ml.py and hybrid.py)  
+    5. According to these Detection files there are two tables in Cassandra Container:
+       1. cycleDetect (used by the cycleDetect.py)
+       2. deadlock_info (used by ml.py and hybrid.py)  
 
 ## Dataset
 
-- File Name: transactions.csv
-- Description: Contains transactional data required for the deadlock detection models.
+ - File Name: transactions.csv
+ - Description: Contains transactional data required for the deadlock detection models.
 
-- **Structure**:
-   - Each row represents a transaction.
-   - Columns should include the required transactional attributes.
+ - **Structure**:
+    - Each row represents a transaction.
+    - Columns should include the required transactional attributes.
 
-- Note: You can upload your custom transactions.csv to the repository for testing.
+ - Note: You can upload your custom transactions.csv to the repository for testing.
 
 
 ## Contributing
-Contributions are welcome! To contribute:
+ - Contributions are welcome! To contribute:
 
-- 1. Fork the repository.
-- 2. Create a new branch for your feature/bug fix.
-- 3. Submit a pull request with a detailed description.
+    - 1. Fork the repository.
+    - 2. Create a new branch for your feature/bug fix.
+    - 3. Submit a pull request with a detailed description.
 
 ## License
-This project is licensed under the MIT License.
+ - This project is licensed under the MIT License.
